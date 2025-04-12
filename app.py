@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 dynamodb = boto3.resource('dynamodb', region_name='ca-central-1')  # Change region as needed
 table = dynamodb.Table('UserForm')  # Replace with your actual table name
+app.run(host="0.0.0.0", port=5000)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
